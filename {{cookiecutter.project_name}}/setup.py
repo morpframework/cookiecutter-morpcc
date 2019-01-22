@@ -1,0 +1,28 @@
+from setuptools import setup, find_packages
+import sys, os
+
+version = '{{ cookiecutter.version }}'
+
+setup(name='{{ cookiecutter.project_name }}',
+      version=version,
+      description="{{ cookiecutter.short_description }}",
+      long_description="""\
+""",
+      classifiers=[], # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
+      keywords='',
+      author='{{ cookiecutter.author_name }}',
+      author_email='{{ cookiecutter.author_email }}',
+      url='{{ cookiecutter.project_url }}',
+      license='{{ cookiecutter.license }}',
+      packages=find_packages(exclude=['ez_setup', 'examples', 'tests']),
+      include_package_data=True,
+      zip_safe=False,
+      install_requires=[
+          # -*- Extra requirements: -*-
+          'morpfw>=0.2.1a1',
+          'morpcc>=0.1.0a1'
+      ],
+      entry_points="""
+      # -*- Entry points: -*-
+      """,
+      )

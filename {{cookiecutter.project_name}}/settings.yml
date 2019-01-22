@@ -1,0 +1,38 @@
+server:
+  listen_host: 127.0.0.1
+  listen_port: 5432
+
+morpfw:
+  scan:
+    - {{ cookiecutter.project_name }}
+
+application:
+  title: {{ cookiecutter.project_name }}
+  app: {{ cookiecutter.project_name }}.app:App
+  fsblobstorage_path: '%(here)s/blobstorage'
+  authn_policy: morpcc.app:AuthnPolicy
+  navigation:
+  - section: General
+    children:
+    - title: Home
+      icon: home
+      children:
+        - title: Home
+          href: /
+  - section: Administrative
+    children:
+    - title: Settings
+      icon: cog
+      children:
+        - title: Users
+          href: /manage-users/+listing
+        - title: Groups
+          href: /manage-groups/+listing
+        - title: API Keys
+          href: /manage-apikeys/+listing
+        - title: Personal
+          href: /personal-settings
+
+
+beaker_session:
+  session.cookie_expires: True
