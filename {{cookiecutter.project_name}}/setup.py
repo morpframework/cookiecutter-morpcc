@@ -23,6 +23,11 @@ setup(name='{{ cookiecutter.project_name }}',
           'morpfw>=0.2.1a1',
           'morpcc>=0.1.0a1'
       ],
+      extras_require={
+         'test': [
+            'morpfw[test]',
+         ]
+      },
       entry_points="""
       # -*- Entry points: -*-
       """,
